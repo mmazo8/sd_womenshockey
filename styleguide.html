@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Guide — Hockey Site</title>
+  <link rel="stylesheet" href="css/base.css">
+  <style>
+    .swatch { display:flex; flex-direction:column; }
+    .swatch__chip { height:90px; border-radius:var(--radius); border:1px solid var(--color-line); }
+    .swatch__label { font-family:var(--font-heading); text-transform:uppercase; font-size:var(--fs-xs); letter-spacing:0.08em; margin-top:var(--space-2); }
+    .swatch__hex { font-size:var(--fs-sm); color:#5a6a82; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:var(--space-4); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <main id="main" class="container section stack-lg">
+    <div class="stack">
+      <p class="eyebrow">Design System</p>
+      <h1>Hockey Site Style Guide</h1>
+      <p>Every page on the site inherits these tokens, so spacing, color, and type stay consistent automatically.</p>
+    </div>
+
+    <section class="stack">
+      <h2>Colors</h2>
+      <div class="grid">
+        <div class="swatch"><div class="swatch__chip" style="background:var(--color-primary)"></div><span class="swatch__label">Primary</span><span class="swatch__hex">#0047ab</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--color-secondary)"></div><span class="swatch__label">Secondary</span><span class="swatch__hex">#bfd1e5</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--color-tertiary)"></div><span class="swatch__label">Tertiary</span><span class="swatch__hex">#0066ff</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--color-quaternary)"></div><span class="swatch__label">Quaternary</span><span class="swatch__hex">#002f6c</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--color-accent)"></div><span class="swatch__label">Accent</span><span class="swatch__hex">#ffd700</span></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <h2>Type Scale</h2>
+      <h1>Heading 1 — Archivo Black</h1>
+      <h2>Heading 2 — Archivo Black</h2>
+      <h3>Heading 3 — Archivo Black</h3>
+      <h4>Heading 4 — Archivo Black</h4>
+      <p>Body copy is set in Archivo Narrow. The quick brown fox jumps over the lazy dog while the puck drops at center ice and the crowd rises to its feet.</p>
+    </section>
+
+    <section class="stack">
+      <h2>Buttons</h2>
+      <div style="display:flex; gap:var(--space-4); flex-wrap:wrap;">
+        <a href="#" class="btn btn--primary">Primary</a>
+        <a href="#" class="btn btn--secondary">Secondary</a>
+        <a href="#" class="btn btn--accent">Accent</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

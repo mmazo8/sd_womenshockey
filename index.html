@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>San Diego Women's Ice Hockey</title>
+  <meta name="description" content="A San Diego league for women of all skill levels to play, improve, and be part of the game.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="landing">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="page">
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="/" aria-label="San Diego Women's Ice Hockey home">
+          <img class="brand__logo" src="assets/logo.svg" alt="">
+          <span class="brand__text">
+            <span class="brand__eyebrow">San Diego</span>
+            <span class="brand__name">Women&rsquo;s Ice Hockey</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#leagues">Womens Leagues</a></li>
+            <li><a class="nav__link" href="#learn">Learn to Play</a></li>
+            <li><a class="nav__link" href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="nav-scrim" aria-hidden="true"></div>
+      </div>
+    </header>
+
+    <!-- ===================== MAIN ===================== -->
+    <main id="main">
+      <!-- ===== HERO ===== -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__media">
+          <img class="hero__img" src="assets/hero.png"
+               alt="Players in a San Diego women's ice hockey game battling for the puck in front of the net.">
+          <div class="hero__content">
+            <h1 class="hero__title" id="hero-title">San Diego<br>Women&rsquo;s Hockey</h1>
+            <div class="hero__lead">
+              <p class="hero__text">A San Diego league for women of all skill levels to play, improve, and be part of the game.</p>
+              <a href="#leagues" class="btn btn--accent">Join our league&nbsp;&rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CAROUSEL ===== -->
+      <section class="gallery" aria-label="Photos from our games">
+        <ul class="gallery__track" tabindex="0" aria-label="Scrollable photo gallery">
+          <li class="gallery__item"><img src="assets/gallery-1.png" alt="Players face off at center ice."></li>
+          <li class="gallery__item"><img src="assets/gallery-2.png" alt="Teammates celebrating on the ice."></li>
+          <li class="gallery__item"><img src="assets/gallery-3.png" alt="A goalie defending the net."></li>
+          <li class="gallery__item"><img src="assets/gallery-4.png" alt="Skaters racing for a loose puck."></li>
+          <li class="gallery__item"><img src="assets/gallery-5.png" alt="A player taking a shot on goal."></li>
+        </ul>
+
+        <div class="sticker"><span>All skill levels<br>welcome!</span></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
