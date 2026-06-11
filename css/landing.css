@@ -309,6 +309,68 @@ body.landing {
 .card__body .btn { margin-top: auto; }
 
 /* ============================================================
+   HOBBY CTA — navy band, watermark, photo + text (#learn)
+   ============================================================ */
+.hobby {
+  position: relative;
+  overflow: hidden;                 /* clip watermark + slant to the section */
+  background: var(--color-surface-2);
+  color: #fff;
+  padding-block: var(--space-9);
+  /* slanted top edge: navy dips lower on the right, like the mock */
+}
+
+.hobby::before {                        /* NEW — navy band with the slant */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary);
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
+  z-index: 0;
+}
+
+/* giant faint heading text behind everything */
+.hobby__watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: clamp(5rem, 16vw, 20rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: #fff;
+  opacity: 0.05;
+  pointer-events: none;
+  white-space: normal;
+  overflow: hidden;
+  z-index: 0;
+  text-align: left;
+}
+
+.hobby__inner {
+  position: relative;               /* above the watermark */
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.hobby__media img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.hobby__content { display: flex; flex-direction: column; gap: var(--space-5); }
+
+.hobby__title { color: #fff; font-size: var(--fs-xl); }
+.hobby__text { color: #fff; font-size: var(--fs-lg); max-width: 42ch; }
+.hobby__content .btn { align-self: flex-start; }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 860px) {
@@ -355,6 +417,10 @@ body.landing {
   .sticker { left: auto; right: var(--space-4); bottom: var(--space-4); }
 
   .leagues__grid { grid-template-columns: 1fr; }
+
+  .hobby__inner { grid-template-columns: 1fr; gap: var(--space-6); }
+  .hobby__media { order: -1; }                 /* photo above text */
+  .hobby__watermark { font-size: clamp(3.5rem, 22vw, 7rem); }
 }
 
 /* tablet: two columns */

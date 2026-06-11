@@ -173,11 +173,7 @@ p + p { margin-top: var(--space-4); }
 .btn--block { display: flex; width: 100%; }
 .btn--cta { font-size: var(--fs-xs); padding-inline: var(--space-4); }
 
-.btn__arrow {
-  display: inline-block;
-  transition: transform var(--transition);
-}
-.btn--cta:hover .btn__arrow { transform: translateX(4px); }
+
 
 /* ============================================================
    ACCESSIBILITY
