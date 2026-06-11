@@ -167,6 +167,18 @@ p + p { margin-top: var(--space-4); }
 
 .btn--accent { background: var(--color-accent); color: var(--color-quaternary); }
 
+/* Solid blue CTA with gold label (used on the leagues cards) */
+.btn--cta { background: var(--color-primary); color: #fff; }
+.btn--cta:hover { background: var(--color-quaternary); color: #fff; }
+.btn--block { display: flex; width: 100%; }
+.btn--cta { font-size: var(--fs-xs); padding-inline: var(--space-4); }
+
+.btn__arrow {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+.btn--cta:hover .btn__arrow { transform: translateX(4px); }
+
 /* ============================================================
    ACCESSIBILITY
    ============================================================ */
