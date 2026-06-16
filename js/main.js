@@ -150,6 +150,22 @@ const GALLERY_ITEMS = [
   });
 })();
 
+/* Carousel arrow controls */
+(function () {
+  const track = document.querySelector('.gallery__track');
+  const controls = document.querySelector('.gallery__controls');
+  if (!track || !controls) return;
+
+  controls.querySelectorAll('.gallery__arrow').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      // scroll by ~85% of the visible width
+      const amount = track.clientWidth * 0.85;
+      const dir = btn.dataset.dir === 'prev' ? -1 : 1;
+      track.scrollBy({ left: amount * dir, behavior: 'smooth' });
+    });
+  });
+})();
+
 /* Footer year */
 (function () {
   const el = document.getElementById('year');

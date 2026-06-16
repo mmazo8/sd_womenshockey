@@ -236,6 +236,34 @@ body.landing {
   transform: skewX(12deg);   /* un-skew the text */
 }
 
+/* Carousel arrow controls */
+.gallery__controls {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  padding-right: var(--gutter);
+  margin-top: var(--space-4);
+}
+
+.gallery__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.gallery__arrow:hover,
+.gallery__arrow:focus-visible {
+  background: var(--color-primary);
+  color: #fff;
+}
 /* ============================================================
    LEAGUES — three-card grid (#leagues)
    ============================================================ */
