@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &mdash; San Diego Women's Ice Hockey</title>
+  <meta name="description" content="Get in touch with San Diego Women's Ice Hockey. Reach our Poway and UTC league directors or send us a message.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="landing">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="page">
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="/" aria-label="San Diego Women's Ice Hockey home">
+          <img class="brand__logo" src="assets/logo.png" alt="">
+          <span class="brand__text">
+            <span class="brand__eyebrow">San Diego</span>
+            <span class="brand__name">Women&rsquo;s Ice Hockey</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="leagues.html">Womens Leagues</a></li>
+            <li><a class="nav__link" href="index.html#learn">Learn to Play</a></li>
+            <li><a class="nav__link" href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="nav-scrim" aria-hidden="true"></div>
+      </div>
+    </header>
+
+    <!-- ===================== MAIN ===================== -->
+    <main id="main">
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="container contact__inner">
+          <div class="contact__form-col">
+            <p class="eyebrow">Ready to Play</p>
+            <h2 class="contact__title" id="contact-title">Contact Us</h2>
+
+            <form class="contact-form"
+                  action="https://formspree.io/f/YOUR_FORM_ID"
+                  method="POST">
+              <div class="contact-form__row">
+                <div class="field">
+                  <label class="field__label" for="cf-first">First Name<span aria-hidden="true">*</span></label>
+                  <input class="field__input" type="text" id="cf-first" name="first_name" required>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="cf-last">Last Name<span aria-hidden="true">*</span></label>
+                  <input class="field__input" type="text" id="cf-last" name="last_name" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="cf-email">Email Address<span aria-hidden="true">*</span></label>
+                <input class="field__input" type="email" id="cf-email" name="email" required>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="cf-skill">Skill Level<span aria-hidden="true">*</span></label>
+                <select class="field__input field__select" id="cf-skill" name="skill_level" required>
+                  <option value="" disabled selected>Select your skill level</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+
+              <fieldset class="field field--checkboxes">
+                <legend class="field__label">I&rsquo;m interested in<span aria-hidden="true">*</span></legend>
+                <label class="checkbox">
+                  <input type="checkbox" name="interests[]" value="Poway League">
+                  <span>Poway League</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="interests[]" value="UTC Pick Up Hockey">
+                  <span>UTC Pick Up Hockey</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="interests[]" value="Learn to Play & Skills">
+                  <span>Learn to Play &amp; Skills</span>
+                </label>
+              </fieldset>
+
+              <div class="field">
+                <label class="field__label" for="cf-subject">Subject<span aria-hidden="true">*</span></label>
+                <input class="field__input" type="text" id="cf-subject" name="subject" required>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="cf-message">Message<span aria-hidden="true">*</span></label>
+                <textarea class="field__input field__textarea" id="cf-message" name="message" rows="6" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--accent contact-form__submit">Submit&nbsp;<span class="btn__arrow" aria-hidden="true">&rarr;</span></button>
+            </form>
+          </div>
+
+          <aside class="contact__directors">
+            <div class="contact__director-group">
+              <h3 class="contact__director-title">Poway Women&rsquo;s Director</h3>
+              <p class="contact__person">
+                <span class="contact__person-name">Ashley Ajero</span>
+                <a href="mailto:ashleymajero@gmail.com">ashleymajero@gmail.com</a>
+              </p>
+              <p class="contact__person">
+                <span class="contact__person-name">Grace Kim</span>
+                <a href="mailto:gracelastnamekim@gmail.com">gracelastnamekim@gmail.com</a>
+              </p>
+            </div>
+
+            <div class="contact__director-group">
+              <h3 class="contact__director-title">UTC Women&rsquo;s Hockey Director</h3>
+              <p class="contact__person">
+                <span class="contact__person-name">Lisa Guinto</span>
+                <a href="mailto:txpaniolo@gmail.com">txpaniolo@gmail.com</a>
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <a class="brand brand--footer" href="/" aria-label="San Diego Women's Ice Hockey home">
+          <img class="brand__logo" src="assets/logo.png" alt="">
+          <span class="brand__text">
+            <span class="brand__eyebrow">San Diego</span>
+            <span class="brand__name">Women&rsquo;s Ice Hockey</span>
+          </span>
+        </a>
+
+        <p class="site-footer__copy">&copy; <span id="year">2026</span> San Diego Women&rsquo;s Ice Hockey. All rights reserved.</p>
+
+        <div class="site-footer__contact">
+          <ul class="site-footer__social">
+            <li>
+              <a href="mailto:hello@sdwomenshockey.com" aria-label="Email us">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m2 6 10 7L22 6"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" aria-label="Follow us on Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
