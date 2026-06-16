@@ -173,6 +173,10 @@ p + p { margin-top: var(--space-4); }
 .btn--block { display: flex; width: 100%; }
 .btn--cta { font-size: var(--fs-xs); padding-inline: var(--space-4); }
 
+/* Arrow that nudges right on hover */
+.btn__arrow { transition: transform var(--transition); }
+.btn:hover .btn__arrow { transform: translateX(4px); }
+
 
 
 /* ============================================================

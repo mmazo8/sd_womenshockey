@@ -378,13 +378,18 @@ body.landing {
  
 .photos__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: 1fr;
-  gap: 2px;                          /* thin seams, near-touching like the hero gallery */
-  min-height: 80vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+  grid-auto-flow: dense;
+  gap: 2px;
 }
- 
-.photos__item { min-height: 0; }     /* let grid rows control height */
+
+.photos__item { min-height: 0; }
+.photos__item:nth-child(9n + 1),
+.photos__item:nth-child(9n + 5),
+.photos__item:nth-child(9n + 8) {
+  grid-row: span 2;
+}
  
 .photos__btn {
   display: block;
@@ -565,6 +570,59 @@ body.landing {
   background: var(--color-accent);
   color: var(--color-quaternary);
 }
+
+/* ============================================================
+   LEAGUE HERO — intro on leagues.html (image left, copy right)
+   ============================================================ */
+.league-hero {
+  padding-block: var(--space-8);
+}
+
+.league-hero__inner {
+  display: grid;
+
+  grid-template-columns: 1.6fr 1fr;   /* was 1.05fr 1fr */
+  gap: clamp(var(--space-6), 4vw, var(--space-8));   /* was space-7, 6vw, space-9 */
+  align-items: center;
+}
+
+.league-hero__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md)
+  
+}
+
+.league-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+.league-hero__title {
+  color: #fff;
+  font-size: var(--fs-xl);
+  line-height: 0.98;
+}
+
+.league-hero__text {
+  color: #fff;
+  font-size: var(--fs-lg);
+  max-width: 38ch;
+  font-weight: 500;
+}
+
+.league-hero .btn--accent {
+  font-size: var(--fs-sm);
+  padding: var(--space-4) var(--space-6);
+}
+
+@media (max-width: 860px) {
+  .league-hero__inner { grid-template-columns: 1fr; gap: var(--space-6); }
+  .league-hero__media { order: -1; }   /* photo above copy */
+}
  
 /* ============================================================
    RESPONSIVE
@@ -641,3 +699,161 @@ body.landing {
 @media (min-width: 861px) {
   .nav-toggle, .nav-scrim { display: none; }
 }
+
+/* ============================================================
+   LEAGUE DETAIL — pale band, slanted top, watermark (#poway)
+   Text left, logo right. Lives on leagues.html
+   ============================================================ */
+.league-detail {
+  position: relative;
+  overflow: hidden;                 /* clip watermark + slant to section */
+  background: var(--color-secondary);
+  color: var(--color-quaternary);
+  padding-block: var(--space-9);
+}
+ 
+/* blue band that slants down toward the right, bleeding from above */
+.league-detail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary);
+  clip-path: polygon(0 0, 100% 0, 100% 6%, 0 12%);
+  z-index: 0;
+}
+ 
+/* giant faint heading text behind everything — blue @ 5% */
+.league-detail__watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: clamp(5rem, 16vw, 20rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+  opacity: 0.05;
+  pointer-events: none;
+  white-space: normal;
+  overflow: hidden;
+  z-index: 0;
+  text-align: left;
+}
+ 
+.league-detail__inner {
+  position: relative;               /* above watermark + slant */
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-7);;
+}
+ 
+.league-detail__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+ 
+.league-detail__title { color: var(--color-quaternary); font-size: var(--fs-xl); }
+ 
+.league-detail__lead {
+  color: var(--color-quaternary);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+ 
+.league-detail__subhead {
+  color: var(--color-quaternary);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin-bottom: calc(-1 * var(--space-3));
+}
+ 
+.league-detail__list {
+  list-style: disc;
+  padding-left: var(--space-6);
+  color: var(--color-quaternary);
+  font-size: var(--fs-base);
+}
+.league-detail__list li + li { margin-top: var(--space-1); }
+ 
+.league-detail__content p {
+  color: var(--color-quaternary);
+  max-width: 42ch;
+}
+ 
+.league-detail__cta {
+  margin-top: var(--space-3);
+  font-size: var(--fs-base);
+}
+ 
+.league-detail__contact {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+  color: var(--color-quaternary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.league-detail__contact:hover { color: var(--color-primary); }
+ 
+.league-detail__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.league-detail__media img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  box-shadow: none;
+}
+ 
+@media (max-width: 860px) {
+  .league-detail__inner { grid-template-columns: 1fr; gap: var(--space-6); }
+  .league-detail__media { order: -1; }   /* logo above text */
+  .league-detail__media img { max-width: 320px; }
+}
+/* ============================================================
+   LEAGUE DETAIL — ALT (blue band, white text, white button)
+   Inverse of the pale section. Used for #utc (logo left, text right)
+   ============================================================ */
+.league-detail--alt {
+  background: var(--color-primary);
+  color: #fff;
+}
+ 
+/* pale band slanting down from above, bleeding from the pale section */
+.league-detail--alt::before {
+  background: var(--color-secondary);
+  clip-path: polygon(0 0, 100% 0, 100% 12%, 0 6%);
+}
+ 
+.league-detail--alt .league-detail__title,
+.league-detail--alt .league-detail__lead,
+.league-detail--alt .league-detail__subhead,
+.league-detail--alt .league-detail__list,
+.league-detail--alt .league-detail__content p {
+  color: #fff;
+}
+ 
+/* white button with blue label */
+.league-detail--alt .btn--primary {
+  background: #fff;
+  color: var(--color-primary);
+}
+.league-detail--alt .btn--primary:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+ 
+.league-detail--alt .league-detail__contact { color: #fff; }
+.league-detail--alt .league-detail__contact:hover { color: var(--color-accent); }
