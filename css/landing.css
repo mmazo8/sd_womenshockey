@@ -137,8 +137,8 @@ body.landing {
   background: linear-gradient(
     100deg,
     rgba(0, 47, 108, 0.78) 0%,
-    rgba(0, 47, 108, 0.45) 45%,
-    rgba(0, 47, 108, 0.15) 100%
+    rgba(0, 47, 108, 0.45) 20%,
+    rgba(0, 47, 108, 0.15) 45%
   );
   border-top-left-radius: var(--radius-lg);
 }
