@@ -37,14 +37,14 @@
    File type is detected from the extension (.mp4/.webm/.ogg/.mov = video).
 */
 const GALLERY_ITEMS = [
-  { src: 'assets/gallery/photo-1.png',  alt: "San Diego women's hockey players on the ice during a game." },
-  { src: 'assets/gallery/photo-2.png',  alt: 'A faceoff at center ice between two players.' },
+  { src: 'assets/gallery/photo-1.JPG',  alt: "San Diego women's hockey players on the ice during a game." },
+  { src: 'assets/gallery/photo-2.JPG',  alt: 'A faceoff at center ice between two players.' },
   { src: 'assets/gallery/photo-3.png',  alt: 'Teammates celebrating a goal together.' },
-  { src: 'assets/gallery/clip-1.mp4',   alt: 'Game highlight: a breakaway and shot on goal.', poster: 'assets/gallery/clip-1.jpg' },
+  { src: 'assets/gallery/photo-11.JPG',   alt: 'Game highlight: a breakaway and shot on goal.', poster: 'assets/gallery/clip-1.jpg' },
   { src: 'assets/gallery/photo-4.png',  alt: 'A goalie making a save in front of the net.' },
   { src: 'assets/gallery/photo-5.png',  alt: 'A player carrying the puck up the ice.' },
   { src: 'assets/gallery/photo-6.png',  alt: 'Players lined up on the bench during a game.' },
-  { src: 'assets/gallery/clip-2.mp4',   alt: 'Warmup drills before the game.', poster: 'assets/gallery/clip-2.jpg' },
+  { src: 'assets/gallery/photo-12.JPG',   alt: 'Warmup drills before the game.', poster: 'assets/gallery/clip-2.jpg' },
   { src: 'assets/gallery/photo-7.png',  alt: 'A skater taking a shot on goal.' },
   { src: 'assets/gallery/photo-8.png',  alt: 'The team posing for a group photo on the ice.' },
   { src: 'assets/gallery/photo-9.png',  alt: 'Two players battling for the puck along the boards.' },
