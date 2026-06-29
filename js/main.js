@@ -173,16 +173,31 @@ const GALLERY_ITEMS = [
     requestAnimationFrame(tick);
   }
 
-  // pause on hover / focus / touch so users can browse
-  ['mouseenter', 'focusin', 'touchstart'].forEach((e) =>
+  // pause on hover / focus so users can browse
+  ['mouseenter', 'focusin'].forEach((e) =>
     track.addEventListener(e, () => { paused = true; }, { passive: true })
   );
-  ['mouseleave', 'focusout', 'touchend'].forEach((e) =>
+  ['mouseleave', 'focusout'].forEach((e) =>
     track.addEventListener(e, () => { paused = false; }, { passive: true })
+  );
+
+  // touch: pause while the finger is down, resume shortly after release
+  let resumeTimer;
+  track.addEventListener('touchstart', () => {
+    clearTimeout(resumeTimer);
+    paused = true;
+  }, { passive: true });
+  ['touchend', 'touchcancel'].forEach((e) =>
+    track.addEventListener(e, () => {
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => { paused = false; }, 1200);
+    }, { passive: true })
   );
 
   requestAnimationFrame(tick);
 })();
+
+
 
 /* Footer year */
 (function () {
