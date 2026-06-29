@@ -150,20 +150,38 @@ const GALLERY_ITEMS = [
   });
 })();
 
-/* Carousel arrow controls */
+/* Carousel auto-scroll */
 (function () {
   const track = document.querySelector('.gallery__track');
-  const controls = document.querySelector('.gallery__controls');
-  if (!track || !controls) return;
+  if (!track) return;
 
-  controls.querySelectorAll('.gallery__arrow').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      // scroll by ~85% of the visible width
-      const amount = track.clientWidth * 0.85;
-      const dir = btn.dataset.dir === 'prev' ? -1 : 1;
-      track.scrollBy({ left: amount * dir, behavior: 'smooth' });
-    });
-  });
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  let paused = false;
+  const SPEED = 0.5; // pixels per frame
+
+  function tick() {
+    if (!paused) {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= maxScroll - 1) {
+        track.scrollTo({ left: 0, behavior: 'auto' }); // loop back to start
+      } else {
+        track.scrollLeft += SPEED;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // pause on hover / focus / touch so users can browse
+  ['mouseenter', 'focusin', 'touchstart'].forEach((e) =>
+    track.addEventListener(e, () => { paused = true; }, { passive: true })
+  );
+  ['mouseleave', 'focusout', 'touchend'].forEach((e) =>
+    track.addEventListener(e, () => { paused = false; }, { passive: true })
+  );
+
+  requestAnimationFrame(tick);
 })();
 
 /* Footer year */

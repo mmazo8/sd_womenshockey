@@ -197,8 +197,10 @@ body.landing {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
+
+.gallery__track { scroll-snap-type: none; }
 
 .gallery__item {
   flex: 0 0 auto;
@@ -603,7 +605,7 @@ body.landing {
    LEAGUE HERO — intro on leagues.html (image left, copy right)
    ============================================================ */
 .league-hero {
-  padding-block: var(--space-8);
+  padding-block: var(--space-9);
 }
 
 .league-hero__inner {
@@ -745,6 +747,7 @@ body.landing {
   content: "";
   position: absolute;
   inset: 0;
+  top: -1px;
   background: var(--color-primary);
   clip-path: polygon(0 0, 100% 0, 100% 6%, 0 12%);
   z-index: 0;
